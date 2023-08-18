@@ -7,16 +7,18 @@ var generateBtn = document.querySelector('#generate')
 function generatePassword() {
 	// var password = generatePassword()
 	var passwordText = document.querySelector('#password')
-
+	// Prompt user for password length
 	const pwLength = Number(prompt('How many characters would you like your password to contain?'))
-
-	const pwLower = confirm('Would you like your password to contain LOWERCASE LETTERS?')
-
-	const pwUpper = confirm('Would you like your password to contain UPPERCASE LETTERS?')
-
-	const pwNumber = confirm('Would you like your password to contain NUMBERS?')
-
-	const pwSpecial = confirm('Would you like your password to contain SPECIAL CHARACTERS?')
+	// Check to see if password length is between 8 and 128
+	if (pwLength < 8 || pwLength > 128) {
+		alert('Password length must be between 8 and 128 characters.')
+		return
+	}
+	// Prompt user for password criteria
+	const pwLower = confirm('Would you like to inclue LOWERCASE LETTERS?')
+	const pwUpper = confirm('Would you like to include UPPERCASE LETTERS?')
+	const pwNumber = confirm('Would you like to include NUMBERS?')
+	const pwSpecial = confirm('Would you like to include SPECIAL CHARACTERS?')
 
 	passwordText.value = password
 	// Console Logs
