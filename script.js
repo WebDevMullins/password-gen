@@ -34,6 +34,11 @@ function generatePassword() {
 	if (pwUpper) characterType += uppercaseCharacters
 	if (pwNumber) characterType += numberCharacters
 	if (pwSpecial) characterType += specialCharacters
+	// Check to see if at least one character type is selected
+	if (!pwLower && !pwUpper && !pwNumber && !pwSpecial) {
+		alert('You must select at least one character type.')
+		return
+	}
 
 	// Generate Password
 	var password = ''
